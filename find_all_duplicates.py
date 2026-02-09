@@ -1,4 +1,3 @@
-
 def findDuplicates(nums):
     integer_appearance = {}
 
@@ -7,13 +6,13 @@ def findDuplicates(nums):
             integer_appearance[num] = 1
         else:
             integer_appearance[num] += 1
-
-    duplicate = []
-    for num, count in integer_appearance.items():
-        if count == 2:
-            duplicate.append(num)
     
-    return sorted(duplicate)
+    duplicates = []
 
-numb = findDuplicates([4,3,2,7,8,2,3,1])
-print(numb)
+    for twice, num in integer_appearance.items(): #[(4, 1), (3, 2), (2, 2), (7, 1), (8, 1), (1, 1)]
+        if num == 2:
+            duplicates.append(twice)
+    
+    return duplicates
+
+numbers = findDuplicates([4,3,1,7,8,2,3,2])
