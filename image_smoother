@@ -1,0 +1,22 @@
+class Solution:
+    def imageSmoother(self, img: List[List[int]]) -> List[List[int]]:
+        row = len(img)
+        col = len(img[0])
+
+        smoother_matrix = [[0]*col for _ in range(row)]
+
+        for m in range(row):
+            for n in range(col):
+
+                total = 0
+                count = 0
+            
+                for i in range(m-1, m+2):
+                    for j in range(n-1, n+2):
+                        if 0 <=i < row and 0 <= j < col:
+                            total += img[i][j]
+                            count += 1
+                
+                smoother_matrix[m][n] = total // count
+
+        return smoother_matrix
