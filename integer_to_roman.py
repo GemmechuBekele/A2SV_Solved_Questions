@@ -1,28 +1,19 @@
-def intToRoman(num):
-    values = [
-        1000, 900, 500, 400,
-        100, 90, 50, 40,
-        10, 9, 5, 4,
-        1
-    ]
+class Solution:
+    def intToRoman(self, num: int) -> str:
+        
+        vals = [
+            1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1
+        ]
 
-    symbols = [
-        "M", "CM", "D", "CD",
-        "C", "XC", "L", "XL",
-        "X", "IX", "V", "IV",
-        "I"
-    ]
+        symbols = [
+            "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"
+        ]
 
-    result = []
+        result = ""
 
-    for i in range(len(values)):
-        while num >= values[i]:
-            result.append(symbols[i])
-            num -= values[i]
+        for i in range(len(vals)):
+            while num >= vals[i]:
+                result += symbols[i]
+                num -= vals[i]
 
-    return "".join(result)
-
-
-print(intToRoman(3749))  
-print(intToRoman(58))    
-print(intToRoman(1994)) 
+        return result
