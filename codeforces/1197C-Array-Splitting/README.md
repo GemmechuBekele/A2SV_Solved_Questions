@@ -1,6 +1,6 @@
 # 1197C-Array-Splitting
 
-**Problem:** [1197C-Array-Splitting](https://codeforces.com/contest/1197/problem/C)
+**Problem:** [1197C-Array-Splitting](https://codeforces.com/problemset/problem/1197/C)
 
 **time limit per test:** 2 seconds
 
