@@ -1,19 +1,16 @@
-class Solution(object):
-    def isValid(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
+class Solution:
+    def isValid(self, s: str) -> bool:
+        parentheses = {")":"(", "}":"{", "]":"["}
         stack = []
-        bracket_map = {')': '(', '}': '{', ']': '['}
         for char in s:
-            if char in bracket_map.values():
-                stack.append(char)
-            elif char in bracket_map:
-                if stack and stack[-1] == bracket_map[char]: 
-                     stack.pop()
+            if char in parentheses:
+                if not stack:return False
+                elif stack[-1] != parentheses[char]: return False
                 else:
-                    return False
-        return len(stack) == 0 
-sol =Solution()
+                    stack.pop()
+            else:
+                stack.append(char)
+
+        return stack == []
+        
         
