@@ -3,7 +3,6 @@ class Solution:
 
         first_map = defaultdict(int)
         second_map = defaultdict(int)
-
         for num in nums:
             first_map[num] += 1
 
