@@ -3,12 +3,8 @@ class Solution:
 
     def possible(self, r, heaters, houses):
         for house in houses:
-            # Find the position where this house would fit in heaters
             idx = bisect.bisect_left(heaters, house)
-            
-            # distance to left heater
             left = abs(house - heaters[idx-1]) if idx > 0 else float('inf')
-            # distance to right heater
             right = abs(heaters[idx] - house) if idx < len(heaters) else float('inf')
             
             if min(left, right) > r:
