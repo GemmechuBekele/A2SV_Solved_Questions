@@ -14,7 +14,7 @@ class Solution:
                 pos = nums[i] - 1
                 if nums[i] != nums[pos]:
                     nums[i], nums[pos] = nums[pos], nums[i]
-                    continue
-            i += 1
+                else: i += 1
+            else: i += 1
         return nums
         
