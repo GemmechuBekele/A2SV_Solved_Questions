@@ -1,6 +1,6 @@
 class Solution:
     def findDuplicates(self, nums: List[int]) -> List[int]:
-        arr = self.quick_sort(nums)
+        arr = self.cycle_sort(nums)
         ans = Counter(arr)
         res = []
         for val, freq in ans.items():
@@ -8,7 +8,7 @@ class Solution:
                 res.append(val)
         return res
         
-    def quick_sort(self, nums):
+    def cycle_sort(self, nums):
         i = 0
         n = len(nums)
         while i < n:
